@@ -42,6 +42,7 @@ services:
     # configured in the Dockerfile, to make it simpler to identify in 'docker volume ls'.
     volumes:
       - /opt/appdata/xwiki-data:/usr/local/xwiki
+      - /opt/appdata/xwiki-tomcat/server.xml:/usr/local/tomcat/conf/server.xml
     networks:
       - bridge
   # The container that runs the database (mysql)
