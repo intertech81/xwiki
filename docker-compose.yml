@@ -24,6 +24,7 @@ networks:
 services:
   # The container that runs XWiki + Tomcat
   web:
+    restart: always
     build: .
     container_name: xwiki-mysql-tomcat-web
     depends_on:
@@ -47,6 +48,7 @@ services:
       - bridge
   # The container that runs the database (mysql)
   db:
+    restart: always
     image: "mysql:5.7"
     container_name: xwiki-mysql-db
     # - We provide a xwiki.cnf file in order to configure the mysql db to support UTF8 and be case-insensitive
